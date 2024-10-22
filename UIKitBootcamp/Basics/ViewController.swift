@@ -9,11 +9,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var greetingLabel: UILabel!
+    @IBOutlet weak var primaryButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemPurple
+        
+    }
+    func greetUser(_ name: String) {
+        greetingLabel.text = "Hello, \(name)!"
     }
 
-
+    @IBAction func primaryButtonTapped(_ sender: Any) {
+        print("DEBUG: Primary button tapped")
+        greetUser("Thanh Trung, how are you today")
+        view.backgroundColor = .systemBackground
+    }
 }
 
